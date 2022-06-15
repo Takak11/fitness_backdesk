@@ -88,9 +88,9 @@ public class FitnessChapterController {
     @GetMapping("/{id}")
     public R getChapter(
             @ApiParam(name = "id", value = "活动ID", required = true)
-            @PathVariable("id") String activityID) {
+            @PathVariable String id) {
 
-        FitnessChapter chapter = chapterService.getById(activityID);
+        FitnessChapter chapter = chapterService.getById(id);
         return R.ok()
                 .data("chapter", chapter);
     }
